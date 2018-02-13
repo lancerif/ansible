@@ -1,6 +1,5 @@
-hosts: localhost
-  
+---
+- hosts: all
   tasks:
-    -   name: install httpd
-        yum: pkg=httpd24 state=installed
+    - shell: echo "hello world"
 
