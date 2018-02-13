@@ -1,9 +1,12 @@
 ---
 - hosts: all
   tasks:
-      yum install httpd -y
-      yum update -y
-
-      service httpd start
-      chkconfig httpd on
+  - name: apache is installation
+    yum: pkg=httpd24 state=installed
+  - name: ensure apache is running
+    service: name=httpd state=started enabled=yes
+  - name: PHP is installed
+    yum: pkg=php56 state=installed
+  - name: install Welcome to Flux7!
+    copy: src=https://s3-us-west-1.amazonaws.com/ansible-lance/index.html dest=/var/www/html/index.php mode=0664
 
