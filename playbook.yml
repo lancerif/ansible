@@ -8,5 +8,5 @@
   - name: PHP is installed
     yum: pkg=php56 state=installed
   - name: install Welcome to Flux7!
-    copy: src=https://s3-us-west-1.amazonaws.com/ansible-lance/index.html dest=/var/www/html/index.php mode=0664
+    curl https://s3-us-west-1.amazonaws.com/ansible-lance/index.html dest=var/www/html/index.php mode=0664
 
