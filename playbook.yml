@@ -1,5 +1,9 @@
 ---
 - hosts: all
   tasks:
-    - shell: echo "hello world"
+      yum install httpd -y
+      yum update -y
+
+      service httpd start
+      chkconfig httpd on
 
