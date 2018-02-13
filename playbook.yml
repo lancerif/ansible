@@ -1,0 +1,10 @@
+hosts: 127.0.0.1
+  connection: local
+  
+  tasks:
+-       name: apache is installation
+        yum: pkg=httpd24 state=installed
+-       name: ensure apache is running
+        service: name=httpd state=started enabled=yes
+-       name: PHP is installed
+        yum: pkg=php56 state=installed
